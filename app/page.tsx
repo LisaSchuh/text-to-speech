@@ -23,8 +23,9 @@ export default function HomePage() {
         };
     }, []);
 
-    function speakGerman(input) {
+    function speakGerman(input:string) {
         const utterance = new SpeechSynthesisUtterance(input);
+        utterance.voice = germanVoice;
         utterance.lang = "de-DE";
         speechSynthesis.speak(utterance);
     }
@@ -46,7 +47,7 @@ export default function HomePage() {
                     <button
                         className="text-3xl bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none hover:bg-blue-600 ml-1"
                         aria-label="Play sound"
-                        onClick={(e) => speakGerman(text)}
+                        onClick={() => speakGerman(text)}
                     >
                         🔊
                     </button>
@@ -64,49 +65,49 @@ export default function HomePage() {
             <section className="w-full max-w-4xl mt-8">
                 <div className="flex flex-wrap gap-4 justify-center items-center pb-4">
                     {/* Example tag bubbles: Large text, high contrast, big padding */}
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Ja")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Ja
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Nein")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Nein
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Danke")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Danke
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Bitte")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Bitte
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Hoi")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Hoi
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Tschüss")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Tschüss
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Hilfe")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
                         Hilfe
                     </button>
-                    <button onClick={(e) => {
+                    <button onClick={() => {
                         speakGerman("Arzt")
                     }}
                             className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
