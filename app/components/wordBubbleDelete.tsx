@@ -1,7 +1,7 @@
 'use server'
 import React from "react";
 
-export const WordBubbleDelete = async ({word, id, onDelete}:{id: number, word:string}) => {
+export const WordBubbleDelete = async ({word, id, onDelete}:{id: number, word:string, onDelete: string | ((formData: FormData) => (void | Promise<void>)) | undefined}) => {
 
     return (
         <form action={onDelete} >

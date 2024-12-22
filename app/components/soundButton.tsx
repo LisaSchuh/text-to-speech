@@ -11,7 +11,9 @@ export const SoundButton = () => {
         onClick={() => {
             //hacks be hacking
             const inputField = document.getElementById("textInput");
+            // @ts-expect-error fuck off
             speakGerman(inputField?.value ?? "");
+            // @ts-expect-error fuck off
             inputField.value = "";
         }}
         type={"button"}

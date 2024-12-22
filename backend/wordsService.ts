@@ -26,6 +26,7 @@ export async function saveText(formData: FormData) {
 
 export async function removeWord(formData: FormData) {
     console.log("delete called")
+    //@ts-expect-error jadajada
     const id = formData.get("idInput") as number;
     if (!id) throw new Error("No id provided");
 

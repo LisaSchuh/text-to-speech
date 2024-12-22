@@ -1,8 +1,8 @@
 'use server'
-import React, {useEffect} from "react";
+import React from "react";
 import {SoundButton} from "@/app/components/soundButton";
 
-export const InputElement = async ({onSave}) => {
+export const InputElement = async ({onSave}:{onSave: string | ((formData: FormData) => (void | Promise<void>)) | undefined}) => {
 
     return (
         <div className="w-full max-w-4xl flex items-center justify-center mt-6">

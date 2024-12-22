@@ -21,10 +21,11 @@ const ca = fs.readFileSync(dbDir + "/ca-certificate.crt");
 const db = new Kysely<ITTSDatabase>({
     dialect:new PostgresDialect({
         pool: new Pool({
-            //@ts-ignore
+
             database: process.env.DB_NAME,
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
+            //@ts-expect-error because why not
             port: process.env.DB_PORT,
             max: 10,
             password:process.env.DB_PWD,
