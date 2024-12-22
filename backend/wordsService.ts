@@ -16,7 +16,7 @@ async function addWord(word: string) {
 
 export async function saveText(formData: FormData) {
     const text = formData.get("textInput") as string;
-    if (!text) throw new Error("No text provided");
+    if (!text) return;
 
     await addWord(text);
 
@@ -28,7 +28,7 @@ export async function removeWord(formData: FormData) {
     console.log("delete called")
     //@ts-expect-error jadajada
     const id = formData.get("idInput") as number;
-    if (!id) throw new Error("No id provided");
+    if (!id) return;
 
     console.log("remove id" + id);
     await removeWordDB(id);
