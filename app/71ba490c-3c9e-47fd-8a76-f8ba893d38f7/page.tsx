@@ -1,6 +1,7 @@
 import React from 'react';
 import {getWords, saveText} from "@/backend/wordsService";
 import {InputElement} from "@/app/components/input";
+import {WordBubble} from "@/app/components/wordBubble";
 
 export default async function HomePage() {
     const words = await getWords();
@@ -11,23 +12,16 @@ export default async function HomePage() {
             <header className="w-full flex flex-col items-center">
                 <InputElement onSave={saveText} />
             </header>
-            {
-                words.map((word) =>
-                    <div key={word.id} className="flex-shrink-0 text-2xl bg-gray-200 rounded-full px-6 py-3 hover:bg-gray-300 focus:outline-none">
-                        {word.text_value}
-                    </div>
-                )
-            }
             {/* Tag Bubbles Section */}
-            {/*<section className="w-full max-w-4xl mt-8">*/}
-            {/*    <div className="flex flex-wrap gap-4 justify-center items-center pb-4">*/}
-            {/*        {*/}
-            {/*            words.map((word) =>*/}
-            {/*                <WordBubble key={word.id} word={word.text_value}/>*/}
-            {/*            )*/}
-            {/*        }*/}
-            {/*    </div>*/}
-            {/*</section>*/}
+            <section className="w-full max-w-4xl mt-8">
+                <div className="flex flex-wrap gap-4 justify-center items-center pb-4">
+                    {
+                        words.map((word) =>
+                            <WordBubble key={word.id} word={word.text_value}/>
+                        )
+                    }
+                </div>
+            </section>
 
             {/* Delete Mode Toggle Button */}
             <a
