@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'light-yellow': '#FFFBD5', // or another hex of your choice
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
